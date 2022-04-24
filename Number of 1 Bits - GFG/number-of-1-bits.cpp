@@ -11,7 +11,7 @@ class Solution {
         while(N>0)
         {
             count=count+(N&1);
-            N=N>>1;
+            N=N/2;
         }
         return count;
     }
