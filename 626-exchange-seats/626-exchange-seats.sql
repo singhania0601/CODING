@@ -1,13 +1,9 @@
 # Write your MySQL query statement below
-select
-    (case
-        when mod(id, 2) != 0 and counts != id then id + 1
-        when mod(id, 2) != 0 and counts = id then id
-        else id - 1
-    end) as id,
+select case
+    when id % 2 = 0 then id - 1
+    when id % 2 = 1 and id != (select max(id) from seat) then id + 1
+    else id
+    end as id,
     student
-from
-    seat,
-    (select count(*) as counts
-    from seat) as seat_counts
+from seat
 order by id
