@@ -1,8 +1,7 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-   // Length of the updated array
-        int count = 0;
+         int count = 0;
         // Loop for all the elements in the array
         for (int i = 0; i < nums.size(); i++) {
             // If the current element is equal to the next element, we skip
